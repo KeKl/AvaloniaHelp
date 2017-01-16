@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="AvaloniaHelp.Avalonia.Controls.ToC"
+             xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             x:Name="ToC">
+  
+  <StackPanel>
+    
+    <TreeView Items="{Binding Sections, ElementName=ToC, Mode=TwoWay}" SelectedItem="{Binding SelectedSection, ElementName=ToC, Mode=TwoWay}">
+      <TreeView.DataTemplates>
+        <TreeDataTemplate ItemsSource="{Binding SubSections}">
+          <TextBlock Text="{Binding Header}" />
+        </TreeDataTemplate>
+      </TreeView.DataTemplates>
+    </TreeView>
+    
+  </StackPanel>
+  
+</UserControl>

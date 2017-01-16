@@ -1,0 +1,10 @@
+﻿<Window x:Class="TestApp2.MainWindow" 
+        xmlns="https://github.com/avaloniaui" 
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:TestApp2;assembly=TestApp2"
+        Width="1024" Height="800" 
+        Title="Test App 2">
+
+    <TextBox local:Props.Test="hjjhjh" />
+
+</Window>

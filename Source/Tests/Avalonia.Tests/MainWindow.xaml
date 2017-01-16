@@ -1,0 +1,30 @@
+﻿<Window x:Class="Avalonia.Tests.MainWindow"
+        xmlns="https://github.com/avaloniaui" 
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Provider="clr-namespace:AvaloniaHelp.Avalonia.Provider;assembly=AvaloniaHelp.Avalonia"
+        xmlns:Help="clr-namespace:AvaloniaHelp.Avalonia;assembly=AvaloniaHelp.Avalonia"
+        xmlns:HelpViews="clr-namespace:AvaloniaHelp.Avalonia.Views;assembly=AvaloniaHelp.Avalonia"
+        Width="1024" Height="800" 
+        Title="Test App">
+
+ 
+    <Grid ColumnDefinitions="30*, Auto, 70*">
+
+        <StackPanel Grid.Column="0">
+            <ListBox Items="{Binding Topics}" SelectedItem="{Binding SelectedTopic}">
+                <ListBox.DataTemplates>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Header}" />
+                    </DataTemplate>
+                </ListBox.DataTemplates>
+            </ListBox>
+            <Button Content="Click" Command="{Binding ClickCommand}" />
+        </StackPanel>
+
+       
+
+        <ContentControl Grid.Column="1" Content="{Binding SelectedTopic.Content}" />
+        
+    </Grid>
+
+</Window>

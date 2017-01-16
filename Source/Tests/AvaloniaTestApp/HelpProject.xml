@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<HelpProject version="1.0">
+  <virtualFolder>docs</virtualFolder>
+  <ToC>
+    <Section Topic="root">
+      <Section Topic="root|main1">
+        <Section Topic="root|main1|sub1" />
+        <Section Topic="root|main1|sub2" />
+      </Section>
+      <Section>
+        <Section Topic="root|main1|sub1" />
+      </Section>
+    </Section>  
+  </ToC>
+  <Topics>
+    <Topic Keyword="root" Reference="root"/>
+    
+  </Topics>
+  
+  <Files>
+    <File Reference="root">%docs%/root.md</File>
+  </Files>
+</HelpProject>
+
+

@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="AvaloniaHelp.Avalonia.Views.QuickHelpView"
+             xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:Properties="clr-namespace:AvaloniaHelp.Avalonia.Properties;assembly=AvaloniaHelp.Avalonia"
+             xmlns:Controls="clr-namespace:AvaloniaHelp.Avalonia.Controls;assembly=AvaloniaHelp.Avalonia">
+
+  <TabControl Grid.Column="0">
+    
+    <TabItem Header="{Binding Title, Mode=TwoWay}">
+      <ContentControl Content="{Binding ActiveContent}" />
+    </TabItem>
+    
+  </TabControl>
+
+</UserControl>
