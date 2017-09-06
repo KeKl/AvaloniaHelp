@@ -1,6 +1,6 @@
 ﻿using AvaloniaHelp;
-using AvaloniaHelp.Avalonia;
-using AvaloniaHelp.Avalonia.Provider;
+using AvaloniaHelp.Core;
+using AvaloniaHelp.Provider;
 using ReactiveUI;
 using System;
 using System.Collections.Generic;
@@ -15,9 +15,11 @@ namespace AvaloniaTestApp
         public MainViewModel()
         {
             provider = new StringContentProvider();
+            provider.ContentViewFactory = CreateContentControl;
             HelpManager.SetContentProvider(provider);
+            
             //HelpManager.AutomaticToCGeneration = false;
-            //HelpManager.SetDefaultToCFactory(GenerateToc); 
+            //HelpManager.SetDefaultToCFactory(GenerateToc);
 
             AddTopics();
             CreateToC();
@@ -27,7 +29,12 @@ namespace AvaloniaTestApp
 
             //HtmlText = html;
         }
-        
+
+        private IContentView CreateContentControl()
+        {
+            return new HtmlLabelContentView();
+        }
+
         private StringContentProvider provider;
 
         //public string HtmlText { get; set; }
@@ -36,17 +43,17 @@ namespace AvaloniaTestApp
         {
             var root = new Topic("root");
             provider.SetContent(root, "This is the root of the help.");
-            
+
             var mainTopic1 = new Topic("root|main1");
             provider.SetContent(mainTopic1, "Main 1 help.");
 
-            var subTopic1 = new Topic("root|main1|sub1", "Sub 1");
+            var subTopic1 = new Topic("root|main1|sub1");
             provider.SetContent(subTopic1, "This is the sub1 help.");
 
             var mainTopic2 = new Topic("root|main2");
             provider.SetContent(mainTopic2, "Main 2 help.");
 
-            var subTopic2 = new Topic("root|main2|sub2", "Sub 2");
+            var subTopic2 = new Topic("root|main2|sub2");
             provider.SetContent(subTopic2, "This is the sub2 help.");
             
             HelpManager.Instance.Topics.Add(root);
@@ -78,7 +85,7 @@ namespace AvaloniaTestApp
             root.AddSubSection(mainSec1);
             root.AddSubSection(mainSec2);
 
-            HelpManager.Instance.TableOfContent.Add(root);
+            HelpManager.Instance.Sections.Add(root);
         }
 
         private ReactiveList<Section> GenerateToc(HelpManager helpManager)

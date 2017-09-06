@@ -7,7 +7,8 @@ AvaloniaHelp will be delivered as a NuGet package.
 
 ## Background
 
-AvaloniaHelp is a help framework for the [avalonia](https://github.com/AvaloniaUI/Avalonia/) project. It is designed for creating a help for desktop or mobile applications.
+AvaloniaHelp is a help framework for the [avalonia](https://github.com/AvaloniaUI/Avalonia/) project. 
+It is designed for creating a help for desktop or mobile applications.
 
 ## Current Status
 

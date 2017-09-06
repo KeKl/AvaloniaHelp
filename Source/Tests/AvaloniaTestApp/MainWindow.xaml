@@ -1,23 +1,23 @@
 ﻿<Window x:Class="AvaloniaTestApp.MainWindow"
         xmlns="https://github.com/avaloniaui" 
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:Provider="clr-namespace:AvaloniaHelp.Avalonia.Provider;assembly=AvaloniaHelp.Avalonia"
-        xmlns:Help="clr-namespace:AvaloniaHelp.Avalonia;assembly=AvaloniaHelp.Avalonia"
-        xmlns:HelpViews="clr-namespace:AvaloniaHelp.Avalonia.Views;assembly=AvaloniaHelp.Avalonia"
+        xmlns:Provider="clr-namespace:AvaloniaHelp.Provider;assembly=AvaloniaHelp"
+        xmlns:Help="clr-namespace:AvaloniaHelp;assembly=AvaloniaHelp"
+        xmlns:HelpViews="clr-namespace:AvaloniaHelp.Views;assembly=AvaloniaHelp"
         xmlns:Html="clr-namespace:Avalonia.Controls.Html;assembly=Avalonia.HtmlRenderer"
         Width="1024" Height="800" 
         Title="Test App">
 
  
     <Grid ColumnDefinitions="30*, Auto, 70*">
-        
+
         <StackPanel Grid.Column="0" Margin="10">
 
             <TextBox Text="Node 1" Help:HelpManager.Keyword="root|main1|sub1" Help:HelpManager.UpdateTrigger="IsFocused" />
             <TextBox Text="Node 2" Help:HelpManager.Keyword="root|main2|sub2" Help:HelpManager.UpdateTrigger="IsFocused" />
 
             <HelpViews:QuickHelpView Margin="10" />
-
+            
         </StackPanel>
 
         <GridSplitter Grid.Column="1" />

@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("AvaloniaTestApp")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Liebherr-Werk Ehingen GmbH")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("AvaloniaTestApp")]
-[assembly: AssemblyCopyright("Copyright © Liebherr-Werk Ehingen GmbH 2016")]
+[assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

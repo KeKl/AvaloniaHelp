@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="AvaloniaHelp.Views.PaneHelpView"
+             xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:Properties="clr-namespace:AvaloniaHelp.Properties;assembly=AvaloniaHelp"
+             xmlns:Controls="clr-namespace:AvaloniaHelp.Controls;assembly=AvaloniaHelp">
+  
+  <TabControl Grid.Column="0">
+    
+    <TabItem Header="{x:Static Properties:Resources.ContentTab}">
+      <Controls:ToC Sections="{Binding TableOfContent, Mode=TwoWay}" SelectedSection="{Binding SelectedSection, Mode=TwoWay}" />
+    </TabItem>
+    
+    <TabItem Header="{x:Static Properties:Resources.SearchTab}">
+      <Controls:Search SearchString="{Binding SearchString}" IncludeTopicContent="{Binding IncludeTopicContent}" SearchResults="{Binding SearchResults}" SelectedResult="{Binding SelectedSearchResult}" />
+    </TabItem>
+    
+    <TabItem Header="{x:Static Properties:Resources.TopicTab}">
+      <ContentControl Content="{Binding Content}" />
+    </TabItem>
+  </TabControl>
+
+</UserControl>

@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="AvaloniaHelp.Controls.Search"
+             xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:Properties="clr-namespace:AvaloniaHelp.Properties;assembly=AvaloniaHelp"
+             x:Name="Search">
+  
+  <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, *, Auto, Auto">
+    
+    <TextBox Grid.Column="0" Grid.Row="0" 
+             Text="{Binding SearchString, ElementName=Search}"
+             Watermark="{x:Static Properties:Resources.SearchWatermarkText}"/>
+
+    <ListBox Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"
+             Items="{Binding SearchResults, ElementName=Search, Mode=TwoWay}"
+             SelectedItem="{Binding SelectedResult, ElementName=Search}">
+      <ListBox.ItemTemplate>
+        <DataTemplate>
+          <TextBlock Text="{Binding Header}"/>
+        </DataTemplate>
+      </ListBox.ItemTemplate>
+  </ListBox>
+
+    <CheckBox Grid.Column="0" Grid.Row="2"  Grid.ColumnSpan="2"
+              Content="{x:Static Properties:Resources.IncludeTopicContent}"
+              IsChecked="{Binding IncludeTopicContent, ElementName=Search}"/>
+
+    <CheckBox Grid.Column="0" Grid.Row="3"  Grid.ColumnSpan="2"
+              IsVisible="{Binding OnlyTraverseSelectedSectionOptionVisible, ElementName=Search}"
+              Content="{x:Static Properties:Resources.OnlyTraverseSelectedSection}"
+              IsChecked="{Binding OnlyTraverseSelectedSection, ElementName=Search}"/>
+    
+  </Grid>
+  
+</UserControl>

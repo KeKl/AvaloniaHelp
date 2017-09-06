@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="AvaloniaHelp.Controls.ToC"
+             xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:i="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity"
+             xmlns:ia="clr-namespace:Avalonia.Xaml.Interactions.Core;assembly=Avalonia.Xaml.Interactions"
+             xmlns:commandBehaviors="clr-namespace:AvaloniaHelp.Behaviors;assembly=AvaloniaHelp"
+             x:Name="ToC">
+  
+  <StackPanel>
+    
+    <!--<TreeView Name="treeView" Items="{Binding Sections, ElementName=ToC, Mode=TwoWay}" SelectedItem="{Binding SelectedSection, ElementName=ToC, Mode=TwoWay}">
+
+      <i:Interaction.Behaviors>
+        <ia:EventTriggerBehavior EventName="PointerPressed" SourceObject="{Binding #treeView}">
+          <ia:CallMethodAction TargetObject="{Binding}" MethodName="IncrementCount" />
+        </ia:EventTriggerBehavior>
+      </i:Interaction.Behaviors>
+      
+      <TreeView.DataTemplates>
+        <TreeDataTemplate ItemsSource="{Binding SubSections}">
+          <TextBlock Name="textBlock" Text="{Binding Header}">
+          
+          </TextBlock>
+        </TreeDataTemplate>
+      </TreeView.DataTemplates>
+
+    </TreeView>-->
+    
+    <TreeView Items="{Binding Sections, ElementName=ToC, Mode=TwoWay}" 
+              SelectedItem="{Binding SelectedSection, ElementName=ToC, Mode=TwoWay}">
+      
+      <TreeView.Styles>
+        <Style Selector="TreeViewItem">
+          <Setter Property="commandBehaviors:DoubleTappedBehavior.Command"
+                  Value="{Binding IncrementCount}"/>
+          <!--<Setter Property="commandBehaviors:MouseDoubleClick.CommandParameter"
+                  Value="{Binding}"/>-->
+        </Style>
+      </TreeView.Styles>
+
+
+      <!--<i:Interaction.Behaviors>
+        <ia:EventTriggerBehavior EventName="DoubleTapped" SourceObject="{Type TreeView}">
+          <ia:CallMethodAction TargetObject="{Binding}" MethodName="IncrementCount" />
+        </ia:EventTriggerBehavior>
+      </i:Interaction.Behaviors>-->
+      
+      <TreeView.DataTemplates>
+        <TreeDataTemplate ItemsSource="{Binding SubSections}">
+          <TextBlock Name="textBlock" Text="{Binding Header}">          
+          </TextBlock>
+        </TreeDataTemplate>
+      </TreeView.DataTemplates>
+    </TreeView>
+    
+  </StackPanel>
+  
+</UserControl>
